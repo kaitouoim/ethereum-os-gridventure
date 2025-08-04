@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/ethereum_os_logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EthereumOS Gridventure</title>
+    <!-- Tailwind CDN - temporary fix -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      @keyframes grid-move {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(50px, 50px);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes wiggle {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(-5deg);
+        }
+        75% {
+          transform: rotate(5deg);
+        }
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+        }
+      }
+
+      .bounce {
+        animation: bounce 0.6s ease-in-out;
+      }
+      .wiggle {
+        animation: wiggle 0.8s ease-in-out;
+      }
+      .glow {
+        animation: glow 2s ease-in-out infinite;
+      }
+
+      .footer {
+        width: 100%;
+        padding: 1rem 0;
+        background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+        color: #0ff;
+        text-align: center;
+        font-size: 0.875rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer p {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col bg-black text-white">
+    <div id="root" class="flex-grow">
+      <!-- React Game will render here -->
+    </div>
+    <footer class="footer mt-8">
+      <p class="glow">
+        EthereumOS Gridventure. Copyright © 2025 @SwordEyz-Emonymous.
+      </p>
+      <div class="mt-2 flex justify-center gap-6">
+        <!-- GitHub Link -->
+        <a
+          href="https://github.com/kaitouoim"
+          target="_blank"
+          class="hover:text-cyan-400 glow flex items-center gap-1"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 
+        9.8 8.205 11.385.6.113.82-.258.82-.577 
+        0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416 
+        -.546-1.387-1.333-1.757-1.333-1.757-1.087-.744.084-.729.084-.729 
+        1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 
+        3.495.997.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.334-5.466-5.93 
+        0-1.31.47-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 
+        0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 
+        1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 
+        3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 
+        1.234 1.91 1.234 3.22 0 4.61-2.807 5.625-5.479 5.921.43.372.823 1.102.823 
+        2.222 0 1.606-.014 2.898-.014 3.293 0 .32.216.694.825.576 
+        C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+            />
+          </svg>
+          GitHub
+        </a>
+
+        <!-- Twitter Link -->
+        <a
+          href="https://twitter.com/SwordEyz"
+          target="_blank"
+          class="hover:text-cyan-400 glow flex items-center gap-1"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M24 4.557a9.93 9.93 0 0 1-2.828.775A4.93 4.93 0 0 0 
+        23.337 3c-.951.555-2.005.959-3.127 1.184A4.92 4.92 0 0 0 
+        16.616 3c-2.737 0-4.946 2.21-4.946 4.947 
+        0 .388.045.765.128 1.124C7.69 8.82 4.066 6.869 
+        1.64 3.905c-.427.732-.666 1.58-.666 2.475 0 
+        1.708.869 3.216 2.188 4.099a4.904 4.904 0 0 1-2.24-.616c-.054 
+        2.385 1.693 4.615 4.188 5.103a4.936 4.936 0 0 1-2.224.084 
+        4.935 4.935 0 0 0 4.604 3.419A9.867 9.867 0 0 1 0 19.54a13.94 
+        13.94 0 0 0 7.548 2.209c9.057 0 14.009-7.514 
+        14.009-14.009 0-.213-.004-.425-.014-.636A10.012 10.012 0 0 0 24 4.557"
+            />
+          </svg>
+          Twitter
+        </a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
